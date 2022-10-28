@@ -1,4 +1,4 @@
-package com.example.climbharder
+package amc.g11.climbharder
 
 import org.junit.Test
 

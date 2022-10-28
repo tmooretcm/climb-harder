@@ -13,7 +13,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.example.climbharder"
+        applicationId "amc.g11.climbharder"
         minSdk 21
         targetSdk 32
         versionCode 1
