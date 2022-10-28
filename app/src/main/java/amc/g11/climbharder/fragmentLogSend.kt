@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import com.example.climbharder.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -15,15 +14,13 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [fragmentAddWorkout.newInstance] factory method to
+ * Use the [fragmentLogSend.newInstance] factory method to
  * create an instance of this fragment.
  */
-class fragmentAddWorkout : Fragment() {
+class fragmentLogSend : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    private lateinit var logSendButton: Button
-    private lateinit var logHangButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,26 +35,7 @@ class fragmentAddWorkout : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_workout, container, false)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        logSendButton = view.findViewById(R.id.button_log_send)
-        logHangButton = view.findViewById(R.id.button_log_hang)
-        logSendButton.setOnClickListener{logSend()}
-        logHangButton.setOnClickListener {logHang()}
-
-    }
-
-    private fun logHang() {
-        val fragment = fragmentLogHang()
-        parentFragmentManager?.beginTransaction()?.replace(R.id.frameLayout, fragment)?.commit()
-    }
-
-    private fun logSend() {
-        val fragment = fragmentLogSend()
-        parentFragmentManager?.beginTransaction()?.replace(R.id.frameLayout, fragment)?.commit()
+        return inflater.inflate(R.layout.fragment_log_send, container, false)
     }
 
     companion object {
@@ -67,12 +45,12 @@ class fragmentAddWorkout : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment fragmentAddWorkout.
+         * @return A new instance of fragment logsFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            fragmentAddWorkout().apply {
+            fragmentLog().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
