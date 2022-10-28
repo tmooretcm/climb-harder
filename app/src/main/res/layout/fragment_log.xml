@@ -7,9 +7,11 @@
     tools:context="amc.g11.climbharder.fragmentLog">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/log_list_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="View your past climbing workouts here" />
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

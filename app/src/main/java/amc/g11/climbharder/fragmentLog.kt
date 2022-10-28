@@ -1,10 +1,13 @@
 package amc.g11.climbharder
 
+import amc.g11.climbharder.adapter.LogAdapter
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.climbharder.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -35,7 +38,12 @@ class fragmentLog : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_log, container, false)
+        var view = inflater.inflate(R.layout.fragment_log, container, false)
+        var recyclerView: RecyclerView? = view.findViewById<View>(R.id.log_list_recycler_view) as RecyclerView
+//        recyclerView?.setHasFixedSize(true)
+        recyclerView?.layoutManager = LinearLayoutManager(view.context)
+        recyclerView?.adapter = LogAdapter(view.context)
+        return view
     }
 
     companion object {
