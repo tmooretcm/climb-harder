@@ -1,6 +1,5 @@
 package amc.g11.climbharder
 
-import amc.g11.climbharder.adapter.LogAdapter
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -38,11 +37,12 @@ class fragmentLog : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        var view = inflater.inflate(R.layout.fragment_log, container, false)
-        var recyclerView: RecyclerView? = view.findViewById<View>(R.id.log_list_recycler_view) as RecyclerView
+        val view = inflater.inflate(R.layout.fragment_recyclerview_send_log, container, false)
+        val recyclerView: RecyclerView? = view.findViewById<View>(R.id.recyclerview_send_log) as RecyclerView
+        val adapter = SendListAdapter()
 //        recyclerView?.setHasFixedSize(true)
         recyclerView?.layoutManager = LinearLayoutManager(view.context)
-        recyclerView?.adapter = LogAdapter(view.context)
+        recyclerView?.adapter = adapter
         return view
     }
 
