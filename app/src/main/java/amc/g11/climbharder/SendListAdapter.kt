@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.climbharder.R
+import amc.g11.climbharder.R
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 

@@ -3,8 +3,8 @@ package amc.g11.climbharder
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.climbharder.R
-import com.example.climbharder.databinding.ActivityMainBinding
+import amc.g11.climbharder.R
+import amc.g11.climbharder.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
