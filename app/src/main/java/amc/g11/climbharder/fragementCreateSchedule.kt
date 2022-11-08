@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import com.example.climbharder.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -18,7 +17,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [fragmentSchedule.newInstance] factory method to
  * create an instance of this fragment.
  */
-class fragmentSchedule : Fragment() {
+class fragmentCreateSchedule : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -36,20 +35,7 @@ class fragmentSchedule : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_schedule, container, false)
-    }
-
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-//        editSendGradeView = view.findViewById(R.id.edit_text_log_send)
-        val createLogButton = view.findViewById<Button>(R.id.button_create_schedule)
-        createLogButton.setOnClickListener {
-            activity?.supportFragmentManager?.beginTransaction()?.apply {
-                replace(R.id.frameLayout, fragmentCreateSchedule())
-                commit()
-            }
-        }
+        return inflater.inflate(R.layout.fragment_create_schedule, container, false)
     }
 
     companion object {
