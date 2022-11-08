@@ -11,6 +11,10 @@ class SendViewModel(private val repository: SendRepository) : ViewModel() {
     fun insert(send: Send) = viewModelScope.launch {
         repository.insert(send)
     }
+
+    fun delete(send: Send) = viewModelScope.launch {
+        repository.delete(send)
+    }
 }
 
 class SendViewModelFactory(private val repository: SendRepository) : ViewModelProvider.Factory {

@@ -16,6 +16,6 @@ interface SendDao {
     suspend fun deleteAll()
 
     @Delete
-    fun delete(send: Send)
+    suspend fun delete(send: Send)
 
 }

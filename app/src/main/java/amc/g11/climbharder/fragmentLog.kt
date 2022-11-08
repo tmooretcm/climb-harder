@@ -8,7 +8,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import amc.g11.climbharder.R
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
+import androidx.recyclerview.widget.ItemTouchHelper
+import com.google.android.material.snackbar.Snackbar
 
 /**
  * A simple [Fragment] subclass.
@@ -37,6 +40,39 @@ class fragmentLog : Fragment() {
 //        recyclerView?.setHasFixedSize(true)
         recyclerView?.layoutManager = LinearLayoutManager(view.context)
         recyclerView?.adapter = viewModel?.adapter
+
+        val itemTouchHelperCallback = object : ItemTouchHelper.SimpleCallback(
+            ItemTouchHelper.UP or ItemTouchHelper.DOWN,
+            ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT
+        ) {
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder
+            ): Boolean {
+                return true
+            }
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                val pos = viewHolder.adapterPosition
+                val send = viewModel?.adapter?.currentList?.get(pos)
+
+                if (send != null) {
+                    viewModel?.delete(send)
+                    Snackbar.make(view, "Send deleted", Snackbar.LENGTH_LONG).apply {
+                        setAction("UNDO") {
+                            viewModel?.insert(send)
+                        }
+                        show()
+                    }
+                }
+            }
+        }
+
+        ItemTouchHelper(itemTouchHelperCallback).apply {
+            attachToRecyclerView(recyclerView)
+        }
+
         return view
     }
 

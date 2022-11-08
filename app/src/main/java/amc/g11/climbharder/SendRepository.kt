@@ -10,4 +10,9 @@ class SendRepository(private val sendDao: SendDao) {
     suspend fun insert(send: Send) {
         sendDao.insert(send)
     }
+
+    @WorkerThread
+    suspend fun delete(send: Send) {
+        sendDao.delete(send)
+    }
 }
