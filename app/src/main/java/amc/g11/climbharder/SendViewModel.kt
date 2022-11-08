@@ -6,6 +6,8 @@ import kotlinx.coroutines.launch
 class SendViewModel(private val repository: SendRepository) : ViewModel() {
     val allSends: LiveData<List<Send>> = repository.allSends.asLiveData()
 
+    val adapter = SendListAdapter()
+
     fun insert(send: Send) = viewModelScope.launch {
         repository.insert(send)
     }

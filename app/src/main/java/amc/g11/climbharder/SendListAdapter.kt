@@ -10,6 +10,7 @@ import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import amc.g11.climbharder.R
+import android.widget.EditText
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
