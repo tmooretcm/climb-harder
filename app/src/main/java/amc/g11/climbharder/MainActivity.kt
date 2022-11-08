@@ -5,7 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import amc.g11.climbharder.R
 import amc.g11.climbharder.databinding.ActivityMainBinding
+import android.content.ClipData
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
 import androidx.activity.viewModels
+import androidx.core.view.get
+import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModel
 
 var id_counter = 0
