@@ -1,6 +1,5 @@
 package amc.g11.climbharder
 
-import amc.g11.climbharder.adapter.LogAdapter
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,12 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.climbharder.R
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+import amc.g11.climbharder.R
+import android.widget.Toast
+import androidx.fragment.app.activityViewModels
+import androidx.recyclerview.widget.ItemTouchHelper
+import com.google.android.material.snackbar.Snackbar
 
 /**
  * A simple [Fragment] subclass.
@@ -21,15 +19,14 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class fragmentLog : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    private var viewModel: SendViewModel? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val thisViewModel: SendViewModel by activityViewModels()
+        viewModel = thisViewModel
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
         }
     }
 
@@ -38,30 +35,52 @@ class fragmentLog : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        var view = inflater.inflate(R.layout.fragment_log, container, false)
-        var recyclerView: RecyclerView? = view.findViewById<View>(R.id.log_list_recycler_view) as RecyclerView
+        val view = inflater.inflate(R.layout.fragment_recyclerview_send_log, container, false)
+        val recyclerView: RecyclerView? = view.findViewById<View>(R.id.recyclerview_send_log) as RecyclerView
 //        recyclerView?.setHasFixedSize(true)
         recyclerView?.layoutManager = LinearLayoutManager(view.context)
-        recyclerView?.adapter = LogAdapter(view.context)
+        recyclerView?.adapter = viewModel?.adapter
+
+        val itemTouchHelperCallback = object : ItemTouchHelper.SimpleCallback(
+            ItemTouchHelper.UP or ItemTouchHelper.DOWN,
+            ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT
+        ) {
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder
+            ): Boolean {
+                return true
+            }
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                val pos = viewHolder.adapterPosition
+                val send = viewModel?.adapter?.currentList?.get(pos)
+
+                if (send != null) {
+                    viewModel?.delete(send)
+                    Snackbar.make(view, "Send deleted", Snackbar.LENGTH_LONG).apply {
+                        setAction("UNDO") {
+                            viewModel?.insert(send)
+                        }
+                        show()
+                    }
+                }
+            }
+        }
+
+        ItemTouchHelper(itemTouchHelperCallback).apply {
+            attachToRecyclerView(recyclerView)
+        }
+
         return view
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment logsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance() =
             fragmentLog().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
                 }
             }
     }
