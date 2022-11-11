@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface SendDao {
 
-    @Query("SELECT * FROM send_table ORDER BY _date DESC")
+    @Query("SELECT * FROM send_table ORDER BY _date DESC, _id DESC")
     fun getAllSends() : Flow<List<Send>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)

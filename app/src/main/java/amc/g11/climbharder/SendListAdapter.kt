@@ -22,15 +22,15 @@ class SendListAdapter : ListAdapter<Send, SendListAdapter.SendViewHolder>(SendsC
 
     override fun onBindViewHolder(holder: SendViewHolder, position: Int) {
         val current = getItem(position)
-        holder.bind(current.grade)
+        holder.bind(current.date, current.grade)
     }
 
     class SendViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val sendItemViewDate: TextView = itemView.findViewById(R.id.send_date)
         private val sendItemViewGrade: TextView = itemView.findViewById(R.id.send_grade)
 
-        fun bind(grade: String?) {
-            sendItemViewDate.text = LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
+        fun bind(date: String?, grade: String?) {
+            sendItemViewDate.text = date
             sendItemViewGrade.text = grade
         }
 
