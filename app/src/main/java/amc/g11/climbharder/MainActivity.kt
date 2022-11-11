@@ -18,7 +18,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.get
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModel
-import com.example.climbharder.databinding.ActivityMainBinding
+
 
 var id_counter = 0
 
@@ -83,7 +83,7 @@ class MainActivity : AppCompatActivity() {
                 if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     if ((ContextCompat.checkSelfPermission(this@MainActivity, Manifest.permission.CAMERA) ==  PackageManager.PERMISSION_GRANTED)) {
                         Toast.makeText(this, "Camera Permission Granted", Toast.LENGTH_SHORT).show()
-                        capturePhoto()
+
                     }
                 }
                 else Toast.makeText(this, "Camera Permission Denied", Toast.LENGTH_SHORT).show()

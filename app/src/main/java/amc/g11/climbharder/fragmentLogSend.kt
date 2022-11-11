@@ -15,10 +15,8 @@ import android.widget.EditText
 import androidx.fragment.app.activityViewModels
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
-import android.provider.MediaStore
 import androidx.core.content.ContextCompat
 import java.util.jar.Manifest
-import android.Manifest
 import android.app.Activity.*
 import android.content.Context
 import android.content.pm.PackageManager
