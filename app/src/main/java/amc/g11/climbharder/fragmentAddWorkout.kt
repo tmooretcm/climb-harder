@@ -35,16 +35,16 @@ class fragmentAddWorkout : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         logSendButton = view.findViewById(R.id.button_log_send)
-        logHangButton = view.findViewById(R.id.button_log_hang)
+//        logHangButton = view.findViewById(R.id.button_log_hang)
         logSendButton.setOnClickListener{logSend()}
-        logHangButton.setOnClickListener {logHang()}
+//        logHangButton.setOnClickListener {logHang()}
 
     }
 
-    private fun logHang() {
-        val fragment = fragmentLogHang()
-        parentFragmentManager?.beginTransaction()?.replace(R.id.frameLayout, fragment)?.commit()
-    }
+//    private fun logHang() {
+//        val fragment = fragmentLogHang()
+//        parentFragmentManager?.beginTransaction()?.replace(R.id.frameLayout, fragment)?.commit()
+//    }
 
     private fun logSend() {
         val fragment = fragmentLogSend()

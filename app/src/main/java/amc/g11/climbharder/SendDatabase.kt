@@ -27,8 +27,6 @@ public abstract class SendDatabase : RoomDatabase() {
 
         suspend fun populateDatabase(sendDao: SendDao) {
             sendDao.deleteAll()
-            var send = Send(id_counter++, LocalDate.now().format(DateTimeFormatter.ofPattern("mm/DD/yyyy")), "V8", "/")
-            sendDao.insert(send)
         }
     }
 

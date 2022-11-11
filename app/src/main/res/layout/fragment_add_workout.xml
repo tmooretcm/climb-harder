@@ -12,45 +12,57 @@
         android:id="@+id/text_view"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:text="This screen is where you can log a new workout" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="24sp"
+        android:layout_marginTop="16dp"
+        android:text="Push Your Grade" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/text_log_send"
-        android:text="Log a send."
-        app:layout_constraintTop_toBottomOf="@id/text_view"
+        android:text="Sent something? Click here to log it."
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="50dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/text_log_hang"
-        android:text="Log a hang."
-        app:layout_constraintTop_toBottomOf="@id/text_log_send"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="18dp"/>
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"/>
 
     <Button
         android:id="@+id/button_log_send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SEND"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/text_log_send"
-        app:layout_constraintHorizontal_bias="0.9"
-        app:layout_constraintStart_toEndOf="@id/text_log_send" />
+        app:layout_constraintTop_toBottomOf="@id/text_log_send"
+        android:layout_marginTop="8dp"/>
 
-    <Button
-        android:id="@+id/button_log_hang"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HANG"
-        app:layout_constraintTop_toBottomOf="@id/button_log_send"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="20sp"
+        android:text="Keep track of your favorite sends, and your progress too."
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/text_log_hang"
-        app:layout_constraintHorizontal_bias="0.9"/>
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="16dp"/>
+
+
+<!--    <Button-->
+<!--        android:id="@+id/button_log_hang"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="HANG"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/button_log_send"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@id/text_log_hang"-->
+<!--        app:layout_constraintHorizontal_bias="0.9"/>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
