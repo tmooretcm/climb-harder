@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="amc.g11.climbharder">
 
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
     <application
         android:name="amc.g11.climbharder.ClimbHarderApplication"
         android:allowBackup="true"

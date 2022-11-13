@@ -26,6 +26,10 @@ class MainActivity : AppCompatActivity() {
         SendViewModelFactory((application as ClimbHarderApplication).send_repository)
     }
 
+    private val scheduleViewModel: ScheduleViewModel by viewModels {
+        ScheduleViewModelFactory((application as ClimbHarderApplication).schedule_repository)
+    }
+
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +37,10 @@ class MainActivity : AppCompatActivity() {
 
         sendViewModel.allSends.observe(this) { sends ->
             sends.let{ sendViewModel.adapter.submitList(it) }
+        }
+
+        scheduleViewModel.allSchedules.observe(this) { schedule ->
+            schedule.let{ scheduleViewModel.adapter.submitList(it) }
         }
 
         binding = ActivityMainBinding.inflate(layoutInflater)
