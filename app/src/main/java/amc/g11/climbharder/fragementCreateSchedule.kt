@@ -8,7 +8,12 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.TimePicker
-import com.example.climbharder.R
+import amc.g11.climbharder.R
+import android.os.Build
+import androidx.annotation.RequiresApi
+import androidx.fragment.app.activityViewModels
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,15 +27,13 @@ private const val ARG_PARAM2 = "param2"
  */
 class fragmentCreateSchedule : Fragment() {
     // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var viewModel: ScheduleViewModel? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+        val thisViewModel: ScheduleViewModel by activityViewModels()
+        viewModel = thisViewModel
+        arguments?.let {}
     }
 
     override fun onCreateView(
@@ -42,13 +45,14 @@ class fragmentCreateSchedule : Fragment() {
     }
 
 
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val submitScheduleButton = view.findViewById<Button>(R.id.button_submit_new_schedule)
-        val timePicker = view.findViewById<TimePicker>(R.id.timePicker)
 
         submitScheduleButton.setOnClickListener {
+            val timePicker = view.findViewById<TimePicker>(R.id.timePicker)
             val monday = view.findViewById<CheckBox>(R.id.checkMon)
             val tuesday = view.findViewById<CheckBox>(R.id.checkTue)
             val wednesday = view.findViewById<CheckBox>(R.id.checkWed)
@@ -57,11 +61,31 @@ class fragmentCreateSchedule : Fragment() {
             val saturday = view.findViewById<CheckBox>(R.id.checkSat)
             val sunday = view.findViewById<CheckBox>(R.id.checkSun)
 
-            // add data to calendar
-            // store the data to be persistent
+            var day: String = "default"
+            if (monday.isChecked) {
+                day = "Monday"
+            } else if (tuesday.isChecked) {
+                day = "Tuesday"
+            } else if (wednesday.isChecked) {
+                day = "Wednesday"
+            } else if (thursday.isChecked) {
+                day = "Thursday"
+            } else if (friday.isChecked) {
+                day = "Friday"
+            } else if (saturday.isChecked) {
+                day = "Saturday"
+            } else if (sunday.isChecked){
+                day = "Sunday"
+            }
+            val time = timePicker.hour.toString() + ":" + timePicker.minute.toString();
+
+            println(day)
+
+            val schedule = Schedule(id_counter++, day, time)
+
+            viewModel?.insert(schedule)
+
             // schedule the push notifications
-
-
 
             activity?.supportFragmentManager?.beginTransaction()?.apply {
                 replace(R.id.frameLayout, fragmentSchedule())
