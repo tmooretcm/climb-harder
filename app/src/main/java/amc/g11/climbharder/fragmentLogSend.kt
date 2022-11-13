@@ -55,7 +55,7 @@ class fragmentLogSend : Fragment() {
                 // need to edit filepath
                 val send =
                     Send(id_counter++,
-                        LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")),
+                        LocalDate.now().format(DateTimeFormatter.ofPattern("MM/dd/yyyy")),
                         editSendGradeView.text.toString(),
                         "/")
                 viewModel?.insert(send)
