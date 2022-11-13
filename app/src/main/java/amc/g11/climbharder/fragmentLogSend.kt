@@ -31,6 +31,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.FileProvider
 import java.io.File
+import java.time.Instant
 
 
 /**
@@ -112,7 +113,7 @@ class fragmentLogSend : Fragment() {
 
     private fun openCamera(view: View){
         val intent: Intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        photoFile = getPhotoURI(photoFileName + photoNum++)
+        photoFile = getPhotoURI(photoFileName + DateTimeFormatter.ISO_INSTANT.format(Instant.now()))
         if(photoFile != null){
             val provider : Uri = FileProvider.getUriForFile(requireContext(), BuildConfig.APPLICATION_ID + ".provider", photoFile!!)
             intent.putExtra(MediaStore.EXTRA_OUTPUT, provider)
