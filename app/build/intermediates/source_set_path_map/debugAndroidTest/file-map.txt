@@ -1,0 +1,7 @@
+com.example.climbharder.test.app-androidTest-0 /Users/aryanparikh/AndroidStudioProjects/ClimbHarder/app/build/generated/res/resValues/androidTest/debug
+com.example.climbharder.test.app-androidTest-1 /Users/aryanparikh/AndroidStudioProjects/ClimbHarder/app/build/generated/res/rs/androidTest/debug
+com.example.climbharder.test.app-mergeDebugAndroidTestResources-2 /Users/aryanparikh/AndroidStudioProjects/ClimbHarder/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
+com.example.climbharder.test.app-mergeDebugAndroidTestResources-3 /Users/aryanparikh/AndroidStudioProjects/ClimbHarder/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
+com.example.climbharder.test.app-merged_res-4 /Users/aryanparikh/AndroidStudioProjects/ClimbHarder/app/build/intermediates/merged_res/debugAndroidTest
+com.example.climbharder.test.app-androidTest-5 /Users/aryanparikh/AndroidStudioProjects/ClimbHarder/app/src/androidTest/res
+com.example.climbharder.test.app-androidTestDebug-6 /Users/aryanparikh/AndroidStudioProjects/ClimbHarder/app/src/androidTestDebug/res

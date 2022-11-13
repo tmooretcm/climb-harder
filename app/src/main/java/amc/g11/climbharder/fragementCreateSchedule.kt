@@ -10,10 +10,16 @@ import android.widget.CheckBox
 import android.widget.TimePicker
 import amc.g11.climbharder.R
 import android.os.Build
+import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.activityViewModels
+import androidx.work.OneTimeWorkRequestBuilder
+import androidx.work.WorkManager
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
+import java.util.concurrent.TimeUnit
+import android.app.NotificationManager
+import androidx.core.app.NotificationManagerCompat
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -86,12 +92,29 @@ class fragmentCreateSchedule : Fragment() {
             viewModel?.insert(schedule)
 
             // schedule the push notifications
+            var delay: Long
+
+            val notifManagerCompat = NotificationManagerCompat.from(requireContext())
+            val enabled = notifManagerCompat.areNotificationsEnabled();
+            Log.d("none", "notifs enabled : $enabled")
+
+            createWorkRequest(5)
 
             activity?.supportFragmentManager?.beginTransaction()?.apply {
                 replace(R.id.frameLayout, fragmentSchedule())
                 commit()
             }
         }
+    }
+
+    private fun createWorkRequest(delay: Long){
+        val request = OneTimeWorkRequestBuilder<ScheduleReminderWorker>()
+            .setInitialDelay(delay, TimeUnit.SECONDS)
+            .addTag("work event")
+            .build()
+
+        WorkManager.getInstance(requireContext()).enqueue(request)
+
     }
 
     companion object {

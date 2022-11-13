@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "amc.g11.climbharder.app-mergeDebugResources-41:/values-ldrtl-v17/values-ldrtl-v17.xml",
+            "map": [
+                {
+                    "source": "/Users/aryanparikh/.gradle/caches/transforms-3/f2124b60c6be63dcece2b5a12ff84d2a/transformed/material-1.5.0/res/values-ldrtl-v17/values-ldrtl-v17.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,191",
+                        "endColumns": "135,140",
+                        "endOffsets": "186,327"
+                    }
+                }
+            ]
+        }
+    ]
+}

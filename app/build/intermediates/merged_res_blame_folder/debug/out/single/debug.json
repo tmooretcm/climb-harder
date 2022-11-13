@@ -1,0 +1,186 @@
+[
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/layout_fragment_schedule.xml.flat",
+        "source": "amc.g11.climbharder.app-main-45:/layout/fragment_schedule.xml"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/drawable-hdpi_history_icon.png.flat",
+        "source": "amc.g11.climbharder.app-pngs-38:/drawable-hdpi/history_icon.png"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/layout_fragment_log_send.xml.flat",
+        "source": "amc.g11.climbharder.app-main-45:/layout/fragment_log_send.xml"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/drawable_climbharderlogo.png.flat",
+        "source": "amc.g11.climbharder.app-main-45:/drawable/climbharderlogo.png"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/layout_fragment_add_workout.xml.flat",
+        "source": "amc.g11.climbharder.app-main-45:/layout/fragment_add_workout.xml"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "amc.g11.climbharder.app-main-45:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/drawable-xxhdpi_history_icon.png.flat",
+        "source": "amc.g11.climbharder.app-pngs-38:/drawable-xxhdpi/history_icon.png"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/drawable-xhdpi_ic_baseline_camera_alt_24.png.flat",
+        "source": "amc.g11.climbharder.app-pngs-38:/drawable-xhdpi/ic_baseline_camera_alt_24.png"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/drawable-mdpi_add_icon.png.flat",
+        "source": "amc.g11.climbharder.app-pngs-38:/drawable-mdpi/add_icon.png"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/drawable-anydpi-v21_ic_baseline_camera_alt_24.xml.flat",
+        "source": "amc.g11.climbharder.app-pngs-38:/drawable-anydpi-v21/ic_baseline_camera_alt_24.xml"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/drawable-mdpi_history_icon.png.flat",
+        "source": "amc.g11.climbharder.app-pngs-38:/drawable-mdpi/history_icon.png"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/drawable-anydpi-v21_add_icon.xml.flat",
+        "source": "amc.g11.climbharder.app-pngs-38:/drawable-anydpi-v21/add_icon.xml"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/drawable-xhdpi_calendar_icon.png.flat",
+        "source": "amc.g11.climbharder.app-pngs-38:/drawable-xhdpi/calendar_icon.png"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/drawable-xxxhdpi_history_icon.png.flat",
+        "source": "amc.g11.climbharder.app-pngs-38:/drawable-xxxhdpi/history_icon.png"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/drawable-xxxhdpi_calendar_icon.png.flat",
+        "source": "amc.g11.climbharder.app-pngs-38:/drawable-xxxhdpi/calendar_icon.png"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/drawable-hdpi_ic_baseline_camera_alt_24.png.flat",
+        "source": "amc.g11.climbharder.app-pngs-38:/drawable-hdpi/ic_baseline_camera_alt_24.png"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "amc.g11.climbharder.app-main-45:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/layout_recyclerview_send_item.xml.flat",
+        "source": "amc.g11.climbharder.app-main-45:/layout/recyclerview_send_item.xml"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/layout_fragment_recyclerview_hang_log.xml.flat",
+        "source": "amc.g11.climbharder.app-main-45:/layout/fragment_recyclerview_hang_log.xml"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/drawable-xxhdpi_calendar_icon.png.flat",
+        "source": "amc.g11.climbharder.app-pngs-38:/drawable-xxhdpi/calendar_icon.png"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/layout_fragment_log_hang.xml.flat",
+        "source": "amc.g11.climbharder.app-main-45:/layout/fragment_log_hang.xml"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/layout_recyclerview_schedule_item.xml.flat",
+        "source": "amc.g11.climbharder.app-main-45:/layout/recyclerview_schedule_item.xml"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/drawable-xxhdpi_ic_baseline_camera_alt_24.png.flat",
+        "source": "amc.g11.climbharder.app-pngs-38:/drawable-xxhdpi/ic_baseline_camera_alt_24.png"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/drawable-mdpi_ic_baseline_camera_alt_24.png.flat",
+        "source": "amc.g11.climbharder.app-pngs-38:/drawable-mdpi/ic_baseline_camera_alt_24.png"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/layout_fragment_create_schedule.xml.flat",
+        "source": "amc.g11.climbharder.app-main-45:/layout/fragment_create_schedule.xml"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/layout_recyclerview_hang_item.xml.flat",
+        "source": "amc.g11.climbharder.app-main-45:/layout/recyclerview_hang_item.xml"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/drawable-ldpi_ic_baseline_camera_alt_24.png.flat",
+        "source": "amc.g11.climbharder.app-pngs-38:/drawable-ldpi/ic_baseline_camera_alt_24.png"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/drawable-anydpi-v21_history_icon.xml.flat",
+        "source": "amc.g11.climbharder.app-pngs-38:/drawable-anydpi-v21/history_icon.xml"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/drawable-anydpi-v21_calendar_icon.xml.flat",
+        "source": "amc.g11.climbharder.app-pngs-38:/drawable-anydpi-v21/calendar_icon.xml"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/drawable-mdpi_calendar_icon.png.flat",
+        "source": "amc.g11.climbharder.app-pngs-38:/drawable-mdpi/calendar_icon.png"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/layout_fragment_home.xml.flat",
+        "source": "amc.g11.climbharder.app-main-45:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/drawable-xxhdpi_add_icon.png.flat",
+        "source": "amc.g11.climbharder.app-pngs-38:/drawable-xxhdpi/add_icon.png"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/menu_bottom_nav_menu.xml.flat",
+        "source": "amc.g11.climbharder.app-main-45:/menu/bottom_nav_menu.xml"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/drawable-xxxhdpi_ic_baseline_camera_alt_24.png.flat",
+        "source": "amc.g11.climbharder.app-pngs-38:/drawable-xxxhdpi/ic_baseline_camera_alt_24.png"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/xml_data_extraction_rules.xml.flat",
+        "source": "amc.g11.climbharder.app-main-45:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/drawable-xhdpi_add_icon.png.flat",
+        "source": "amc.g11.climbharder.app-pngs-38:/drawable-xhdpi/add_icon.png"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/drawable-xxxhdpi_add_icon.png.flat",
+        "source": "amc.g11.climbharder.app-pngs-38:/drawable-xxxhdpi/add_icon.png"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/layout_fragment_recyclerview_send_log.xml.flat",
+        "source": "amc.g11.climbharder.app-main-45:/layout/fragment_recyclerview_send_log.xml"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/drawable-ldpi_calendar_icon.png.flat",
+        "source": "amc.g11.climbharder.app-pngs-38:/drawable-ldpi/calendar_icon.png"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/xml_backup_rules.xml.flat",
+        "source": "amc.g11.climbharder.app-main-45:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/drawable-hdpi_add_icon.png.flat",
+        "source": "amc.g11.climbharder.app-pngs-38:/drawable-hdpi/add_icon.png"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/drawable-ldpi_add_icon.png.flat",
+        "source": "amc.g11.climbharder.app-pngs-38:/drawable-ldpi/add_icon.png"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/layout_activity_main.xml.flat",
+        "source": "amc.g11.climbharder.app-main-45:/layout/activity_main.xml"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/drawable-hdpi_calendar_icon.png.flat",
+        "source": "amc.g11.climbharder.app-pngs-38:/drawable-hdpi/calendar_icon.png"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/drawable-xhdpi_history_icon.png.flat",
+        "source": "amc.g11.climbharder.app-pngs-38:/drawable-xhdpi/history_icon.png"
+    },
+    {
+        "merged": "amc.g11.climbharder.app-merged_res-43:/drawable-ldpi_history_icon.png.flat",
+        "source": "amc.g11.climbharder.app-pngs-38:/drawable-ldpi/history_icon.png"
+    }
+]

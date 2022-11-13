@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/dummy"
+        android:visible="false"/>
+
+    <item
+        android:id="@+id/icon_log"
+        android:title="Logs"
+        android:icon="@drawable/history_icon"/>
+
+    <item
+        android:id="@+id/icon_new"
+        android:title="New Workout"
+        android:icon="@drawable/add_icon"/>
+
+    <item
+        android:id="@+id/icon_calendar"
+        android:title="Schedule"
+        android:icon="@drawable/calendar_icon"/>
+
+
+</menu>
