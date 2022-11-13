@@ -31,10 +31,6 @@ class fragmentCreateSchedule : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
-
-        val submit = view.findViewById(R.id.button_submit_new_schedule)
-        val timePicker = view.findViewById<TimePicker>(R.id.timePicker)
-
     }
 
     override fun onCreateView(
