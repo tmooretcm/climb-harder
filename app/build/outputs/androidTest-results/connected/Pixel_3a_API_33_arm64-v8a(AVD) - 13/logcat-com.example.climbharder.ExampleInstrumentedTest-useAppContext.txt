@@ -1,2 +1,0 @@
-10-26 19:12:39.040 18897 18915 I TestRunner: started: useAppContext(com.example.climbharder.ExampleInstrumentedTest)
-10-26 19:12:39.041 18897 18915 I TestRunner: finished: useAppContext(com.example.climbharder.ExampleInstrumentedTest)

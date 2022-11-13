@@ -4,7 +4,17 @@
             "outputFile": "amc.g11.climbharder.app-mergeDebugResources-41:/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "/Users/aryanparikh/.gradle/caches/transforms-3/814c8b22a8de6101cdd880907cc308c2/transformed/cardview-1.0.0/res/values-v23/values-v23.xml",
+                    "source": "/Users/tmooretcm/.gradle/caches/transforms-3/1d6b07599787d7805cbf648f5d01f9e1/transformed/work-runtime-2.7.1/res/values-v23/values-v23.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,121",
+                        "endColumns": "65,62",
+                        "endOffsets": "116,179"
+                    }
+                },
+                {
+                    "source": "/Users/tmooretcm/.gradle/caches/transforms-3/814c8b22a8de6101cdd880907cc308c2/transformed/cardview-1.0.0/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +33,7 @@
                     }
                 },
                 {
-                    "source": "/Users/aryanparikh/.gradle/caches/transforms-3/f2124b60c6be63dcece2b5a12ff84d2a/transformed/material-1.5.0/res/values-v23/values-v23.xml",
+                    "source": "/Users/tmooretcm/.gradle/caches/transforms-3/f2124b60c6be63dcece2b5a12ff84d2a/transformed/material-1.5.0/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,5,8,13,17,20,23,26,31,34,38",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
@@ -42,17 +52,7 @@
                     }
                 },
                 {
-                    "source": "/Users/aryanparikh/.gradle/caches/transforms-3/1d6b07599787d7805cbf648f5d01f9e1/transformed/work-runtime-2.7.1/res/values-v23/values-v23.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,121",
-                        "endColumns": "65,62",
-                        "endOffsets": "116,179"
-                    }
-                },
-                {
-                    "source": "/Users/aryanparikh/.gradle/caches/transforms-3/b5a2d028bba2020ba6f526bbc5e4b01a/transformed/appcompat-1.4.1/res/values-v23/values-v23.xml",
+                    "source": "/Users/tmooretcm/.gradle/caches/transforms-3/b5a2d028bba2020ba6f526bbc5e4b01a/transformed/appcompat-1.4.1/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",

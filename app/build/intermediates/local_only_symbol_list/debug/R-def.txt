@@ -71,7 +71,10 @@ menu bottom_nav_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
-string hello_blank_fragment
+string channel_description
+string channel_name
+string climb_reminder
+string schedule
 style Theme.ClimbHarder
 xml backup_rules
 xml data_extraction_rules
