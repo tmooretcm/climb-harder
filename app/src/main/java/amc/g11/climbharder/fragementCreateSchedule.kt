@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.CheckBox
+import android.widget.TimePicker
 import com.example.climbharder.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -28,6 +31,10 @@ class fragmentCreateSchedule : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
+        val submit = view.findViewById(R.id.button_submit_new_schedule)
+        val timePicker = view.findViewById<TimePicker>(R.id.timePicker)
+
     }
 
     override fun onCreateView(
@@ -36,6 +43,35 @@ class fragmentCreateSchedule : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_create_schedule, container, false)
+    }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val submitScheduleButton = view.findViewById<Button>(R.id.button_submit_new_schedule)
+        val timePicker = view.findViewById<TimePicker>(R.id.timePicker)
+
+        submitScheduleButton.setOnClickListener {
+            val monday = view.findViewById<CheckBox>(R.id.checkMon)
+            val tuesday = view.findViewById<CheckBox>(R.id.checkTue)
+            val wednesday = view.findViewById<CheckBox>(R.id.checkWed)
+            val thursday = view.findViewById<CheckBox>(R.id.checkThu)
+            val friday = view.findViewById<CheckBox>(R.id.checkFri)
+            val saturday = view.findViewById<CheckBox>(R.id.checkSat)
+            val sunday = view.findViewById<CheckBox>(R.id.checkSun)
+
+            // add data to calendar
+            // store the data to be persistent
+            // schedule the push notifications
+
+
+
+            activity?.supportFragmentManager?.beginTransaction()?.apply {
+                replace(R.id.frameLayout, fragmentSchedule())
+                commit()
+            }
+        }
     }
 
     companion object {

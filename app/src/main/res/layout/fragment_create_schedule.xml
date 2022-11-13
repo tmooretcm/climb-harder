@@ -57,43 +57,43 @@
         app:layout_constraintTop_toBottomOf="@+id/days_label_layout">
 
         <CheckBox
-            android:id="@+id/fragment_createalarm_checkMon"
+            android:id="@+id/checkMon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Mon" />
 
         <CheckBox
-            android:id="@+id/fragment_createalarm_checkTue"
+            android:id="@+id/checkTue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tue" />
 
         <CheckBox
-            android:id="@+id/fragment_createalarm_checkWed"
+            android:id="@+id/checkWed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Wed" />
 
         <CheckBox
-            android:id="@+id/fragment_createalarm_checkThu"
+            android:id="@+id/checkThu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Thu" />
 
         <CheckBox
-            android:id="@+id/fragment_createalarm_checkFri"
+            android:id="@+id/checkFri"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Fri" />
 
         <CheckBox
-            android:id="@+id/fragment_createalarm_checkSat"
+            android:id="@+id/checkSat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sat" />
 
         <CheckBox
-            android:id="@+id/fragment_createalarm_checkSun"
+            android:id="@+id/checkSun"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sun" />
@@ -119,7 +119,7 @@
             android:layout_marginStart="25dp" />
 
         <TimePicker
-            android:id="@+id/fragment_createalarm_timePicker"
+            android:id="@+id/timePicker"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.6"
