@@ -19,6 +19,7 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.util.concurrent.TimeUnit
 import android.app.NotificationManager
+import android.widget.LinearLayout
 import androidx.core.app.NotificationManagerCompat
 
 // TODO: Rename parameter arguments, choose names that match
@@ -59,6 +60,8 @@ class fragmentCreateSchedule : Fragment() {
 
         submitScheduleButton.setOnClickListener {
             val timePicker = view.findViewById<TimePicker>(R.id.timePicker)
+            val ll1 = view.findViewById<LinearLayout>(R.id.day_options_1)
+            val ll2 = view.findViewById<LinearLayout>(R.id.day_options_2)
             val monday = view.findViewById<CheckBox>(R.id.checkMon)
             val tuesday = view.findViewById<CheckBox>(R.id.checkTue)
             val wednesday = view.findViewById<CheckBox>(R.id.checkWed)
@@ -67,22 +70,30 @@ class fragmentCreateSchedule : Fragment() {
             val saturday = view.findViewById<CheckBox>(R.id.checkSat)
             val sunday = view.findViewById<CheckBox>(R.id.checkSun)
 
-            var day: String = "default"
+            var day: String = ""
+
             if (monday.isChecked) {
-                day = "Monday"
-            } else if (tuesday.isChecked) {
-                day = "Tuesday"
-            } else if (wednesday.isChecked) {
-                day = "Wednesday"
-            } else if (thursday.isChecked) {
-                day = "Thursday"
-            } else if (friday.isChecked) {
-                day = "Friday"
-            } else if (saturday.isChecked) {
-                day = "Saturday"
-            } else if (sunday.isChecked){
-                day = "Sunday"
+                day += "M "
             }
+            if (tuesday.isChecked) {
+                day += "T "
+            }
+            if (wednesday.isChecked) {
+                day += "W "
+            }
+            if (thursday.isChecked) {
+                day += "H "
+            }
+            if (friday.isChecked) {
+                day += "F "
+            }
+            if (saturday.isChecked) {
+                day += "S "
+            }
+            if (sunday.isChecked) {
+                day += "U "
+            }
+
             val time = timePicker.hour.toString() + ":" + timePicker.minute.toString();
 
             println(day)
