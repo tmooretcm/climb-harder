@@ -48,7 +48,7 @@ class fragmentLogSend : Fragment() {
     var photoFileName = "send.jpg"
     var photoFile : File? = null
     val appDirName = "ClimbHarder"
-    var cameraResultLauncher: ActivityResultLauncher<Intent> = null!!
+    private lateinit var cameraResultLauncher: ActivityResultLauncher<Intent>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -112,7 +112,7 @@ class fragmentLogSend : Fragment() {
         val intent: Intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         photoFile = getPhotoURI(photoFileName + photoNum++)
         if(photoFile != null){
-            val provider : Uri = FileProvider.getUriForFile(requireContext(), "com.climbharder.fileprovider", photoFile!!)
+            val provider : Uri = FileProvider.getUriForFile(requireContext(), BuildConfig.APPLICATION_ID + ".provider", photoFile!!)
             intent.putExtra(MediaStore.EXTRA_OUTPUT, provider)
             if(intent.resolveActivity(requireContext().packageManager) != null){
                 startActivityForResult(intent, CAMERA_REQUEST)

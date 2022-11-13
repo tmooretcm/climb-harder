@@ -39,6 +39,8 @@ android {
 }
 
 dependencies {
+
+
     implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
     implementation "androidx.activity:activity-ktx:$rootProject.activityVersion"
 
