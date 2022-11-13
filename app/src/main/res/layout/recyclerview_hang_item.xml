@@ -2,7 +2,6 @@
 <com.google.android.material.card.MaterialCardView
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
@@ -12,19 +11,20 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <TextView
-            android:id="@+id/exercise_name"
-            android:layout_width="225sp"
+            android:id="@+id/hang_date"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-            android:layout_marginStart="8sp"
-            android:layout_marginTop="8sp"
-            android:layout_marginBottom="8sp"
-            app:layout_constraintHorizontal_bias="0"
+            android:layout_marginBottom="8dp"
+            android:paddingLeft="8dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="center"
+            android:hint="11/06/2022"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>
-
