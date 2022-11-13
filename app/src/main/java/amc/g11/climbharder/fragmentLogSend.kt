@@ -20,6 +20,7 @@ import java.util.jar.Manifest
 import android.app.Activity.*
 import android.content.Context
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Environment
@@ -48,6 +49,7 @@ class fragmentLogSend : Fragment() {
     var photoFileName = "send.jpg"
     var photoFile : File? = null
     val appDirName = "ClimbHarder"
+    lateinit var retrievedImg : Bitmap
     private lateinit var cameraResultLauncher: ActivityResultLauncher<Intent>
 
 
@@ -56,7 +58,7 @@ class fragmentLogSend : Fragment() {
         cameraResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
             result: ActivityResult ->
                 if(result.resultCode == RESULT_OK){
-                    val retrievedImg = BitmapFactory.decodeFile(photoFile!!.absolutePath)
+                    retrievedImg = BitmapFactory.decodeFile(photoFile!!.absolutePath)
                 }
                 else Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
 
@@ -92,7 +94,7 @@ class fragmentLogSend : Fragment() {
                     Send(id_counter++,
                         LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")),
                         editSendGradeView.text.toString(),
-                        "/")
+                        photoFile!!.absolutePath)
                 viewModel?.insert(send)
 
             }
