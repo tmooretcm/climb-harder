@@ -24,6 +24,7 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Environment
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
@@ -114,6 +115,7 @@ class fragmentLogSend : Fragment() {
     private fun openCamera(view: View){
         val intent: Intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         photoFile = getPhotoURI(photoFileName + DateTimeFormatter.ISO_INSTANT.format(Instant.now()))
+        Log.d("d", photoFile!!.absolutePath)
         if(photoFile != null){
             val provider : Uri = FileProvider.getUriForFile(requireContext(), BuildConfig.APPLICATION_ID + ".provider", photoFile!!)
             intent.putExtra(MediaStore.EXTRA_OUTPUT, provider)

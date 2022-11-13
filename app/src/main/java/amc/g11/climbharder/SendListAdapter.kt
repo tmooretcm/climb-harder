@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import amc.g11.climbharder.R
 import android.widget.EditText
+import android.widget.ImageView
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
@@ -28,6 +29,7 @@ class SendListAdapter : ListAdapter<Send, SendListAdapter.SendViewHolder>(SendsC
     class SendViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val sendItemViewDate: TextView = itemView.findViewById(R.id.send_date)
         private val sendItemViewGrade: TextView = itemView.findViewById(R.id.send_grade)
+        private val sendItemViewImage: ImageView = itemView.findViewById(R.id.send_img)
 
         fun bind(grade: String?) {
             sendItemViewDate.text = LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
