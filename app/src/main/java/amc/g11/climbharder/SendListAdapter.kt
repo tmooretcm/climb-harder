@@ -1,22 +1,16 @@
 package amc.g11.climbharder
 
-import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import android.widget.TextView
-import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import amc.g11.climbharder.R
-import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.os.Environment
-import android.widget.EditText
+import android.transition.TransitionManager
 import android.widget.ImageView
-import android.widget.Toast
-import java.io.File
+import androidx.core.view.isVisible
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
@@ -28,7 +22,14 @@ class SendListAdapter : ListAdapter<Send, SendListAdapter.SendViewHolder>(SendsC
 
     override fun onBindViewHolder(holder: SendViewHolder, position: Int) {
         val current = getItem(position)
+        val isExpanded = position == mExpandedPosition
         holder.bind(current.grade, current.image)
+        holder.itemView.findViewById<ImageView>(R.id.send_img).visibility = if (isExpanded) View.VISIBLE else View.GONE
+        holder.itemView.isActivated = isExpanded
+        holder.itemView.setOnClickListener(View.OnClickListener {
+            mExpandedPosition = if (isExpanded) -1 else position
+            notifyItemChanged(position)
+        })
     }
 
     class SendViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -37,8 +38,9 @@ class SendListAdapter : ListAdapter<Send, SendListAdapter.SendViewHolder>(SendsC
         private val sendItemViewImage: ImageView = itemView.findViewById(R.id.send_img)
 
         fun bind(grade: String?, fileName: String?) {
-            sendItemViewDate.text = LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
+            sendItemViewDate.text = LocalDate.now().format(DateTimeFormatter.ofPattern("MM/dd/yyyy"))
             sendItemViewGrade.text = grade
+            println("Filename in bind: $fileName")
             val retrievedImg = BitmapFactory.decodeFile(fileName)
             sendItemViewImage.setImageBitmap(retrievedImg)
         }

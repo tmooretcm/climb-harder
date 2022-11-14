@@ -10,39 +10,39 @@ import kotlinx.coroutines.launch
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
-@Database(entities = [Send::class], version = 1, exportSchema = false)
-public abstract class SendDatabase : RoomDatabase() {
+@Database(entities = [Schedule::class], version = 1, exportSchema = false)
+public abstract class ScheduleDatabase : RoomDatabase() {
 
-    abstract fun getSendDao(): SendDao
+    abstract fun getScheduleDao(): ScheduleDao
 
-    private class SendDatabaseCallback (private val scope: CoroutineScope) : RoomDatabase.Callback() {
+    private class ScheduleDatabaseCallback (private val scope: CoroutineScope) : RoomDatabase.Callback() {
         override fun onCreate(db: SupportSQLiteDatabase) {
             super.onCreate(db)
             INSTANCE?.let { database ->
                 scope.launch {
-                    populateDatabase(database.getSendDao())
+                    populateDatabase(database.getScheduleDao())
                 }
             }
         }
 
-        suspend fun populateDatabase(sendDao: SendDao) {
-            sendDao.deleteAll()
+        suspend fun populateDatabase(scheduleDao: ScheduleDao) {
+            scheduleDao.deleteAll()
         }
     }
 
     companion object {
         @Volatile
-        private var INSTANCE: SendDatabase? = null
+        private var INSTANCE: ScheduleDatabase? = null
 
         fun getDatabase(context: Context,
                         scope: CoroutineScope
-                        ): SendDatabase {
+                        ): ScheduleDatabase {
             return INSTANCE ?: synchronized(this) {
                 val instance = androidx.room.Room.databaseBuilder(
                     context.applicationContext,
-                    SendDatabase::class.java,
-                    "send_database"
-                ).addCallback(SendDatabaseCallback(scope)).build()
+                    ScheduleDatabase::class.java,
+                    "schedule_database"
+                ).addCallback(ScheduleDatabaseCallback(scope)).build()
                 INSTANCE = instance
 
                 instance

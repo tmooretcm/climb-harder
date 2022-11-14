@@ -21,6 +21,7 @@ import androidx.lifecycle.ViewModel
 
 
 var id_counter = 0
+var mExpandedPosition = -1
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,6 +31,10 @@ class MainActivity : AppCompatActivity() {
 
     private val sendViewModel: SendViewModel by viewModels {
         SendViewModelFactory((application as ClimbHarderApplication).send_repository)
+    }
+
+    private val scheduleViewModel: ScheduleViewModel by viewModels {
+        ScheduleViewModelFactory((application as ClimbHarderApplication).schedule_repository)
     }
 
     private lateinit var binding: ActivityMainBinding
@@ -48,6 +53,10 @@ class MainActivity : AppCompatActivity() {
         }
         sendViewModel.allSends.observe(this) { sends ->
             sends.let{ sendViewModel.adapter.submitList(it) }
+        }
+
+        scheduleViewModel.allSchedules.observe(this) { schedule ->
+            schedule.let{ scheduleViewModel.adapter.submitList(it) }
         }
 
         binding = ActivityMainBinding.inflate(layoutInflater)

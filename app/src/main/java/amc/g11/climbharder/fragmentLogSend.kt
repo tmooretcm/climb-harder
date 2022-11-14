@@ -90,13 +90,20 @@ class fragmentLogSend : Fragment() {
 //            val replyIntent = Intent()
             if(TextUtils.isEmpty(editSendGradeView.text)) {
                 // handle error
-            } else {
+                Toast.makeText(context, "Please enter a grade.", Toast.LENGTH_SHORT).show()
+            }
+
+            if (photoFile == null) {
+                Toast.makeText(context, "Please attach an image to the send.", Toast.LENGTH_SHORT).show()
+            }
+            if (!TextUtils.isEmpty(editSendGradeView.text) && photoFile != null) {
                 // need to edit filepath
                 val send =
                     Send(id_counter++,
-                        LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")),
+                        LocalDate.now().format(DateTimeFormatter.ofPattern("MM/dd/yyyy")),
                         editSendGradeView.text.toString(),
                         photoFile!!.absolutePath)
+                println("File path: " + photoFile!!.absolutePath)
                 viewModel?.insert(send)
 
             }
@@ -127,7 +134,7 @@ class fragmentLogSend : Fragment() {
 
     }
 
-    public fun getPhotoURI(fN: String): File{
+    fun getPhotoURI(fN: String): File{
         val dir = File(activity?.applicationContext?.getExternalFilesDir(Environment.DIRECTORY_PICTURES), appDirName)
         if(!dir.exists() && !dir.mkdirs()){
             Toast.makeText(context, "Failed To Make Directory for Images", Toast.LENGTH_SHORT).show()
