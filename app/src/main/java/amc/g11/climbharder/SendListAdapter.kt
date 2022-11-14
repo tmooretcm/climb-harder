@@ -28,7 +28,7 @@ class SendListAdapter : ListAdapter<Send, SendListAdapter.SendViewHolder>(SendsC
 
     override fun onBindViewHolder(holder: SendViewHolder, position: Int) {
         val current = getItem(position)
-        holder.bind(current.grade)
+        holder.bind(current.grade, current.image)
     }
 
     class SendViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -39,8 +39,7 @@ class SendListAdapter : ListAdapter<Send, SendListAdapter.SendViewHolder>(SendsC
         fun bind(grade: String?, fileName: String?) {
             sendItemViewDate.text = LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
             sendItemViewGrade.text = grade
-            val photoURI = getPhotoURI(fileName);
-            val retrievedImg = BitmapFactory.decodeFile(photoURI!!.absolutePath)
+            val retrievedImg = BitmapFactory.decodeFile(fileName)
             sendItemViewImage.setImageBitmap(retrievedImg)
         }
 
