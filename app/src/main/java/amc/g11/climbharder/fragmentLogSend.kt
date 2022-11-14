@@ -127,7 +127,7 @@ class fragmentLogSend : Fragment() {
 
     }
 
-    private fun getPhotoURI(fN: String): File{
+    public fun getPhotoURI(fN: String): File{
         val dir = File(activity?.applicationContext?.getExternalFilesDir(Environment.DIRECTORY_PICTURES), appDirName)
         if(!dir.exists() && !dir.mkdirs()){
             Toast.makeText(context, "Failed To Make Directory for Images", Toast.LENGTH_SHORT).show()

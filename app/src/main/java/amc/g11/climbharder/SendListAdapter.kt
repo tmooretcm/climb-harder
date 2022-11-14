@@ -10,8 +10,13 @@ import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import amc.g11.climbharder.R
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.os.Environment
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.Toast
+import java.io.File
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
@@ -31,9 +36,12 @@ class SendListAdapter : ListAdapter<Send, SendListAdapter.SendViewHolder>(SendsC
         private val sendItemViewGrade: TextView = itemView.findViewById(R.id.send_grade)
         private val sendItemViewImage: ImageView = itemView.findViewById(R.id.send_img)
 
-        fun bind(grade: String?) {
+        fun bind(grade: String?, fileName: String?) {
             sendItemViewDate.text = LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
             sendItemViewGrade.text = grade
+            val photoURI = getPhotoURI(fileName);
+            val retrievedImg = BitmapFactory.decodeFile(photoURI!!.absolutePath)
+            sendItemViewImage.setImageBitmap(retrievedImg)
         }
 
         companion object {
@@ -43,6 +51,7 @@ class SendListAdapter : ListAdapter<Send, SendListAdapter.SendViewHolder>(SendsC
             }
         }
     }
+
 
     class SendsComparator : DiffUtil.ItemCallback<Send>() {
         override fun areItemsTheSame(oldItem: Send, newItem: Send): Boolean {
