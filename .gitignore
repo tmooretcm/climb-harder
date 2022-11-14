@@ -9,4 +9,4 @@ bin/
 gen/
 build/
 .project
-
+.idea/
