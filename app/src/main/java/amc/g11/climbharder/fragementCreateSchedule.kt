@@ -21,6 +21,7 @@ import java.util.concurrent.TimeUnit
 import android.app.NotificationManager
 import android.widget.LinearLayout
 import androidx.core.app.NotificationManagerCompat
+import java.util.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -71,45 +72,41 @@ class fragmentCreateSchedule : Fragment() {
             val sunday = view.findViewById<CheckBox>(R.id.checkSun)
 
             var day: String = ""
+            val hour = timePicker.hour
+            val min = timePicker.minute
+            val time = hour.toString() + ":" + min.toString();
 
             if (monday.isChecked) {
                 day += "M "
+                createNotification(2, hour, min)
             }
             if (tuesday.isChecked) {
                 day += "T "
+                createNotification(3, hour, min)
             }
             if (wednesday.isChecked) {
                 day += "W "
+                createNotification(4, hour, min)
             }
             if (thursday.isChecked) {
                 day += "H "
+                createNotification(5, hour, min)
             }
             if (friday.isChecked) {
                 day += "F "
+                createNotification(6, hour, min)
             }
             if (saturday.isChecked) {
                 day += "S "
+                createNotification(7, hour, min)
             }
             if (sunday.isChecked) {
                 day += "U "
+                createNotification(1, hour, min)
             }
 
-            val time = timePicker.hour.toString() + ":" + timePicker.minute.toString();
-
-            println(day)
-
             val schedule = Schedule(id_counter++, day, time)
-
             viewModel?.insert(schedule)
-
-            // schedule the push notifications
-            var delay: Long
-
-            val notifManagerCompat = NotificationManagerCompat.from(requireContext())
-            val enabled = notifManagerCompat.areNotificationsEnabled();
-            Log.d("none", "notifs enabled : $enabled")
-
-            createWorkRequest(5)
 
             activity?.supportFragmentManager?.beginTransaction()?.apply {
                 replace(R.id.frameLayout, fragmentSchedule())
@@ -118,9 +115,29 @@ class fragmentCreateSchedule : Fragment() {
         }
     }
 
+    private fun createNotification(dayNum: Int, hour: Int, min: Int) {
+        val currentDate = Calendar.getInstance()
+        val dueDate = Calendar.getInstance()
+        dueDate.set(Calendar.DAY_OF_WEEK, dayNum)
+        dueDate.set(Calendar.HOUR_OF_DAY, hour)
+        dueDate.set(Calendar.MINUTE, min)
+        dueDate.set(Calendar.SECOND, 0)
+
+        if (dueDate.before(currentDate)) {
+            dueDate.add(Calendar.WEEK_OF_YEAR, 1)
+        }
+        val timeDiff = dueDate.timeInMillis - currentDate.timeInMillis
+
+        val notifManagerCompat = NotificationManagerCompat.from(requireContext())
+        val enabled = notifManagerCompat.areNotificationsEnabled();
+        Log.d("none", "notifs enabled : $enabled")
+
+        createWorkRequest(timeDiff)
+    }
+
     private fun createWorkRequest(delay: Long){
         val request = OneTimeWorkRequestBuilder<ScheduleReminderWorker>()
-            .setInitialDelay(delay, TimeUnit.SECONDS)
+            .setInitialDelay(delay, TimeUnit.MILLISECONDS)
             .addTag("work event")
             .build()
 

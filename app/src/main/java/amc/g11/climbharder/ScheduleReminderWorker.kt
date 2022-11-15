@@ -6,8 +6,9 @@ import android.content.Context
 import android.content.Intent
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
-import androidx.work.Worker
-import androidx.work.WorkerParameters
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.work.*
+//import androidx.work.WorkManager
 import java.util.concurrent.TimeUnit
 import kotlin.random.Random
 
@@ -16,6 +17,12 @@ class ScheduleReminderWorker(val context: Context, workerParameters: WorkerParam
         val intent = Intent(context.applicationContext, MainActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
+
+        val request = OneTimeWorkRequestBuilder<ScheduleReminderWorker>()
+            .setInitialDelay(7, TimeUnit.DAYS)
+            .addTag("work event")
+            .build()
+        WorkManager.getInstance(applicationContext).enqueue(request)
 
         val pendingIntent: PendingIntent = PendingIntent
             .getActivity(context.applicationContext, 0, intent, PendingIntent.FLAG_IMMUTABLE)
