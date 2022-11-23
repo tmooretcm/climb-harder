@@ -5,9 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.CheckBox
-import android.widget.TimePicker
 import amc.g11.climbharder.R
 import android.os.Build
 import android.util.Log
@@ -19,7 +16,7 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.util.concurrent.TimeUnit
 import android.app.NotificationManager
-import android.widget.LinearLayout
+import android.widget.*
 import androidx.core.app.NotificationManagerCompat
 import java.util.*
 
@@ -107,6 +104,8 @@ class fragmentCreateSchedule : Fragment() {
 
             val schedule = Schedule(id_counter++, day, time)
             viewModel?.insert(schedule)
+
+            Toast.makeText(context, "New schedule added!", Toast.LENGTH_SHORT).show()
 
             activity?.supportFragmentManager?.beginTransaction()?.apply {
                 replace(R.id.frameLayout, fragmentSchedule())

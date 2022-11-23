@@ -24,10 +24,23 @@
         android:layout_height="0dp"
         tools:listitem="@layout/recyclerview_send_item"
         android:padding="16dp"
-        app:layout_constraintBottom_toTopOf="@id/send_log_instructions"
+        app:layout_constraintBottom_toTopOf="@id/send_log_blank"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/send_log_title" />
+
+    <TextView
+        android:id="@+id/send_log_blank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No sends logged to showcase."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/send_log_instructions"
+        app:layout_constraintTop_toBottomOf="@id/recyclerview_send_log"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp"/>
 
     <TextView
         android:id="@+id/send_log_instructions"

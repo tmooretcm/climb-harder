@@ -105,7 +105,12 @@ class fragmentLogSend : Fragment() {
                         photoFile!!.absolutePath)
                 println("File path: " + photoFile!!.absolutePath)
                 viewModel?.insert(send)
+                Toast.makeText(context, "Added your log!", Toast.LENGTH_SHORT).show()
 
+                activity?.supportFragmentManager?.beginTransaction()?.apply {
+                    replace(R.id.frameLayout, fragmentLog())
+                    commit()
+                }
             }
         }
     }

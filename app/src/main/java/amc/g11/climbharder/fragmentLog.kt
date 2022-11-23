@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import amc.g11.climbharder.R
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -40,6 +41,11 @@ class fragmentLog : Fragment() {
 //        recyclerView?.setHasFixedSize(true)
         recyclerView?.layoutManager = LinearLayoutManager(view.context)
         recyclerView?.adapter = viewModel?.adapter
+
+        // Tried to make the blank text not show up
+//        if (recyclerView?.childCount!! > 0) {
+//            view.findViewById<TextView>(R.id.send_log_blank).text = ""
+//        }
 
         val itemTouchHelperCallback = object : ItemTouchHelper.SimpleCallback(
             ItemTouchHelper.UP or ItemTouchHelper.DOWN,
