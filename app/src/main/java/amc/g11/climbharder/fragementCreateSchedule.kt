@@ -58,59 +58,79 @@ class fragmentCreateSchedule : Fragment() {
 
         submitScheduleButton.setOnClickListener {
             val timePicker = view.findViewById<TimePicker>(R.id.timePicker)
-            val ll1 = view.findViewById<LinearLayout>(R.id.day_options_1)
-            val ll2 = view.findViewById<LinearLayout>(R.id.day_options_2)
-            val monday = view.findViewById<CheckBox>(R.id.checkMon)
-            val tuesday = view.findViewById<CheckBox>(R.id.checkTue)
-            val wednesday = view.findViewById<CheckBox>(R.id.checkWed)
-            val thursday = view.findViewById<CheckBox>(R.id.checkThu)
-            val friday = view.findViewById<CheckBox>(R.id.checkFri)
-            val saturday = view.findViewById<CheckBox>(R.id.checkSat)
-            val sunday = view.findViewById<CheckBox>(R.id.checkSun)
+            checkboxListener()
+        }
+    }
 
-            var day: String = ""
-            val hour = timePicker.hour
-            val min = timePicker.minute
-            val time = hour.toString() + ":" + min.toString();
+    private fun checkboxListener(){
 
-            if (monday.isChecked) {
-                day += "M "
-                createNotification(2, hour, min)
-            }
-            if (tuesday.isChecked) {
-                day += "T "
-                createNotification(3, hour, min)
-            }
-            if (wednesday.isChecked) {
-                day += "W "
-                createNotification(4, hour, min)
-            }
-            if (thursday.isChecked) {
-                day += "H "
-                createNotification(5, hour, min)
-            }
-            if (friday.isChecked) {
-                day += "F "
-                createNotification(6, hour, min)
-            }
-            if (saturday.isChecked) {
-                day += "S "
-                createNotification(7, hour, min)
-            }
-            if (sunday.isChecked) {
-                day += "U "
-                createNotification(1, hour, min)
-            }
+        val timePicker = view?.findViewById<TimePicker>(R.id.timePicker)
+        val ll1 = view?.findViewById<LinearLayout>(R.id.day_options_1)
+        val ll2 = view?.findViewById<LinearLayout>(R.id.day_options_2)
+        val monday = view?.findViewById<CheckBox>(R.id.checkMon)
+        val tuesday = view?.findViewById<CheckBox>(R.id.checkTue)
+        val wednesday = view?.findViewById<CheckBox>(R.id.checkWed)
+        val thursday = view?.findViewById<CheckBox>(R.id.checkThu)
+        val friday = view?.findViewById<CheckBox>(R.id.checkFri)
+        val saturday = view?.findViewById<CheckBox>(R.id.checkSat)
+        val sunday = view?.findViewById<CheckBox>(R.id.checkSun)
 
-            val schedule = Schedule(id_counter++, day, time)
-            viewModel?.insert(schedule)
+        var day: String = ""
+        val hour = timePicker?.hour
+        val min = timePicker?.minute
+        val time = hour.toString() + ":" + min.toString();
+        var flag = false
 
-            Toast.makeText(context, "New schedule added!", Toast.LENGTH_SHORT).show()
+        if (monday!!.isChecked) {
+            day += "Mon "
+            flag = true
+            createNotification(2, hour!!, min!!)
+        }
+        if (tuesday!!.isChecked) {
+            day += "Tue "
+            flag = true
+            createNotification(3, hour!!, min!!)
+        }
+        if (wednesday!!.isChecked) {
+            day += "Wed "
+            flag = true
+            createNotification(4, hour!!, min!!)
+        }
+        if (thursday!!.isChecked) {
+            day += "Thu "
+            flag = true
+            createNotification(5, hour!!, min!!)
+        }
+        if (friday!!.isChecked) {
+            day += "Fri "
+            flag = true
+            createNotification(6, hour!!, min!!)
+        }
+        if (saturday!!.isChecked) {
+            day += "Sat "
+            flag = true
+            createNotification(7, hour!!, min!!)
+        }
+        if (sunday!!.isChecked) {
+            day += "Sun "
+            flag = true
+            createNotification(1, hour!!, min!!)
+        }
+        if(!flag){
+            //nothing was selected
+            Toast.makeText(context, "No Days were selected. Make a day selection to make a schedule", Toast.LENGTH_SHORT).show()
+            return
 
-            activity?.supportFragmentManager?.beginTransaction()?.apply {
-                replace(R.id.frameLayout, fragmentSchedule())
-                commit()
-            }
+        }
+
+        val schedule = Schedule(id_counter++, day, time)
+        viewModel?.insert(schedule)
+
+        Toast.makeText(context, "New schedule added!", Toast.LENGTH_SHORT).show()
+
+        activity?.supportFragmentManager?.beginTransaction()?.apply {
+            replace(R.id.frameLayout, fragmentSchedule())
+            commit()
         }
     }
 
