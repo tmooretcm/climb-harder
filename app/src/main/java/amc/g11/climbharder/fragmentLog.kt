@@ -7,9 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import amc.g11.climbharder.R
-import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.ItemTouchHelper
 import com.google.android.material.snackbar.Snackbar
@@ -20,7 +17,6 @@ import com.google.android.material.snackbar.Snackbar
  * create an instance of this fragment.
  */
 class fragmentLog : Fragment() {
-
     private var viewModel: SendViewModel? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,7 +34,6 @@ class fragmentLog : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_recyclerview_send_log, container, false)
         val recyclerView: RecyclerView? = view.findViewById<View>(R.id.recyclerview_send_log) as RecyclerView
-//        recyclerView?.setHasFixedSize(true)
         recyclerView?.layoutManager = LinearLayoutManager(view.context)
         recyclerView?.adapter = viewModel?.adapter
 

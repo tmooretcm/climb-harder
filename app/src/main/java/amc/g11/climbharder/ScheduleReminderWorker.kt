@@ -1,14 +1,11 @@
 package amc.g11.climbharder
 
-import android.app.Notification
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.work.*
-//import androidx.work.WorkManager
 import java.util.concurrent.TimeUnit
 import kotlin.random.Random
 

@@ -1,18 +1,12 @@
 package amc.g11.climbharder
 
-import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import android.widget.TextView
-import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import amc.g11.climbharder.R
-import android.widget.EditText
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 
 class ScheduleListAdapter : ListAdapter<Schedule, ScheduleListAdapter.ScheduleViewHolder>(ScheduleComparator()) {
 

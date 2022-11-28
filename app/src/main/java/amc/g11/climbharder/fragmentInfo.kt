@@ -14,7 +14,6 @@ import android.widget.Button
  * create an instance of this fragment.
  */
 class fragmentInfo : Fragment() {
-    // TODO: Rename and change types of parameters
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

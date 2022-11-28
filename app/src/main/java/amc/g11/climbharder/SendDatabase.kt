@@ -1,14 +1,11 @@
 package amc.g11.climbharder
 
 import android.content.Context
-import androidx.lifecycle.ViewModelProvider.NewInstanceFactory.Companion.instance
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 
 @Database(entities = [Send::class], version = 1, exportSchema = false)
 public abstract class SendDatabase : RoomDatabase() {

@@ -8,9 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import android.graphics.BitmapFactory
-import android.transition.TransitionManager
 import android.widget.ImageView
-import androidx.core.view.isVisible
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 

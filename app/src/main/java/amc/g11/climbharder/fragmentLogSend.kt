@@ -35,7 +35,6 @@ import androidx.core.content.FileProvider
 import java.io.File
 import java.time.Instant
 
-
 /**
  * A simple [Fragment] subclass.
  * Use the [fragmentLogSend.newInstance] factory method to
@@ -44,17 +43,13 @@ import java.time.Instant
 class fragmentLogSend : Fragment() {
 
     private var viewModel: SendViewModel? = null
-
     private lateinit var editSendGradeView: EditText
-    private var sendViewModel: SendViewModel? = null
     public val CAMERA_REQUEST : Int = 999;
-    public var photoNum: Int = 0
     var photoFileName = "send.jpg"
     var photoFile : File? = null
     val appDirName = "ClimbHarder"
     lateinit var retrievedImg : Bitmap
     private lateinit var cameraResultLauncher: ActivityResultLauncher<Intent>
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -97,7 +92,6 @@ class fragmentLogSend : Fragment() {
 
         val logButton = view.findViewById<Button>(R.id.button_log_send_2)
         logButton.setOnClickListener {
-//            val replyIntent = Intent()
             if(TextUtils.isEmpty(editSendGradeView.text)) {
                 // handle error
                 Toast.makeText(context, "Please enter a grade.", Toast.LENGTH_SHORT).show()
@@ -107,7 +101,6 @@ class fragmentLogSend : Fragment() {
                 Toast.makeText(context, "Please attach an image to the send.", Toast.LENGTH_SHORT).show()
             }
             if (!TextUtils.isEmpty(editSendGradeView.text) && photoFile != null) {
-                // need to edit filepath
                 val send =
                     Send(id_counter++,
                         LocalDate.now().format(DateTimeFormatter.ofPattern("MM/dd/yyyy")),
@@ -159,6 +152,5 @@ class fragmentLogSend : Fragment() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-
     }
 }

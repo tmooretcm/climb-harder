@@ -31,7 +31,6 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class fragmentCreateSchedule : Fragment() {
-    // TODO: Rename and change types of parameters
     private var viewModel: ScheduleViewModel? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,8 +64,6 @@ class fragmentCreateSchedule : Fragment() {
     private fun checkboxListener(){
 
         val timePicker = view?.findViewById<TimePicker>(R.id.timePicker)
-        val ll1 = view?.findViewById<LinearLayout>(R.id.day_options_1)
-        val ll2 = view?.findViewById<LinearLayout>(R.id.day_options_2)
         val monday = view?.findViewById<CheckBox>(R.id.checkMon)
         val tuesday = view?.findViewById<CheckBox>(R.id.checkTue)
         val wednesday = view?.findViewById<CheckBox>(R.id.checkWed)

@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import amc.g11.climbharder.R
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -82,7 +81,6 @@ class fragmentSchedule : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        editSendGradeView = view.findViewById(R.id.edit_text_log_send)
         val createLogButton = view.findViewById<Button>(R.id.button_create_schedule)
         createLogButton.setOnClickListener {
             activity?.supportFragmentManager?.beginTransaction()?.apply {

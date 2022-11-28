@@ -3,22 +3,13 @@ package amc.g11.climbharder
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import amc.g11.climbharder.R
 import amc.g11.climbharder.databinding.ActivityMainBinding
 import android.Manifest
-import android.content.ClipData
 import android.content.pm.PackageManager
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.core.view.get
-import androidx.core.view.isVisible
-import androidx.lifecycle.ViewModel
-
 
 var id_counter = 0
 var mExpandedPosition = -1
@@ -92,7 +83,6 @@ class MainActivity : AppCompatActivity() {
                 if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     if ((ContextCompat.checkSelfPermission(this@MainActivity, Manifest.permission.CAMERA) ==  PackageManager.PERMISSION_GRANTED)) {
                         Toast.makeText(this, "Camera Permission Granted", Toast.LENGTH_SHORT).show()
-
                     }
                 }
                 else Toast.makeText(this, "Camera Permission Denied", Toast.LENGTH_SHORT).show()
