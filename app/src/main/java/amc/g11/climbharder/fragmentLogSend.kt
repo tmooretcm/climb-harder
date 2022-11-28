@@ -24,6 +24,7 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Environment
+import android.text.TextUtils.replace
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
@@ -85,6 +86,15 @@ class fragmentLogSend : Fragment() {
         val cameraButton = view.findViewById<Button>(R.id.button_log_send_image)
         cameraButton.setOnClickListener{ openCamera(view) }
         editSendGradeView = view.findViewById(R.id.edit_text_log_send)
+
+        val helpButton = view.findViewById<Button>(R.id.fragment_log_send_help_button)
+        helpButton.setOnClickListener {
+            activity?.supportFragmentManager?.beginTransaction()?.apply {
+                replace(R.id.frameLayout, fragmentInfo())
+                commit()
+            }
+        }
+
         val logButton = view.findViewById<Button>(R.id.button_log_send_2)
         logButton.setOnClickListener {
 //            val replyIntent = Intent()
