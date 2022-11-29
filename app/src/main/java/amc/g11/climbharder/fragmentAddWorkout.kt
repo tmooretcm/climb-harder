@@ -33,11 +33,20 @@ class fragmentAddWorkout : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         logSendButton = view.findViewById(R.id.button_log_send)
         logSendButton.setOnClickListener{logSend()}
+
+        val helpButton = view.findViewById<Button>(R.id.help_button)
+        helpButton.setOnClickListener {
+            activity?.supportFragmentManager?.beginTransaction()?.apply {
+                addToBackStack("add_workout")
+                replace(R.id.frameLayout, fragmentInfo())
+                commit()
+            }
+        }
     }
 
     private fun logSend() {
         val fragment = fragmentLogSend()
-        parentFragmentManager?.beginTransaction()?.replace(R.id.frameLayout, fragment)?.commit()
+        parentFragmentManager.beginTransaction().replace(R.id.frameLayout, fragment).commit()
     }
 
     companion object {

@@ -75,7 +75,7 @@ class fragmentCreateSchedule : Fragment() {
         var day: String = ""
         val hour = timePicker?.hour
         val min = timePicker?.minute
-        val time = hour.toString() + ":" + min.toString();
+        val time = hour.toString() + ":" + min.toString()
         var flag = false
 
         if (monday!!.isChecked) {
@@ -145,7 +145,7 @@ class fragmentCreateSchedule : Fragment() {
         val timeDiff = dueDate.timeInMillis - currentDate.timeInMillis
 
         val notifManagerCompat = NotificationManagerCompat.from(requireContext())
-        val enabled = notifManagerCompat.areNotificationsEnabled();
+        val enabled = notifManagerCompat.areNotificationsEnabled()
         Log.d("none", "notifs enabled : $enabled")
 
         createWorkRequest(timeDiff)

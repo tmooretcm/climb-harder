@@ -44,7 +44,7 @@ class fragmentLogSend : Fragment() {
 
     private var viewModel: SendViewModel? = null
     private lateinit var editSendGradeView: EditText
-    public val CAMERA_REQUEST : Int = 999;
+    val CAMERA_REQUEST : Int = 999
     var photoFileName = "send.jpg"
     var photoFile : File? = null
     val appDirName = "ClimbHarder"
@@ -85,6 +85,7 @@ class fragmentLogSend : Fragment() {
         val helpButton = view.findViewById<Button>(R.id.fragment_log_send_help_button)
         helpButton.setOnClickListener {
             activity?.supportFragmentManager?.beginTransaction()?.apply {
+                addToBackStack("log_send")
                 replace(R.id.frameLayout, fragmentInfo())
                 commit()
             }
@@ -150,7 +151,4 @@ class fragmentLogSend : Fragment() {
         return File(dir.path + File.separator + fN)
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-    }
 }

@@ -33,10 +33,11 @@ class fragmentInfo : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val backButton = view.findViewById<Button>(R.id.fragment_info_back_button)
         backButton.setOnClickListener {
-            activity?.supportFragmentManager?.beginTransaction()?.apply {
-                replace(R.id.frameLayout, fragmentLogSend())
-                commit()
-            }
+//            activity?.supportFragmentManager?.beginTransaction()?.apply {
+//                replace(R.id.frameLayout, fragmentLogSend())
+//                commit()
+//            }
+            activity?.supportFragmentManager?.popBackStack()
         }
     }
 

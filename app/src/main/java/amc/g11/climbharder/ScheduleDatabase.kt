@@ -11,7 +11,7 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
 @Database(entities = [Schedule::class], version = 1, exportSchema = false)
-public abstract class ScheduleDatabase : RoomDatabase() {
+abstract class ScheduleDatabase : RoomDatabase() {
 
     abstract fun getScheduleDao(): ScheduleDao
 

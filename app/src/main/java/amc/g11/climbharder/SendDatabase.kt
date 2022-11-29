@@ -8,7 +8,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
 @Database(entities = [Send::class], version = 1, exportSchema = false)
-public abstract class SendDatabase : RoomDatabase() {
+abstract class SendDatabase : RoomDatabase() {
 
     abstract fun getSendDao(): SendDao
 

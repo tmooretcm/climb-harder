@@ -13,10 +13,11 @@
         android:src="@drawable/climbharderlogo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo_label"
         tools:ignore="ImageContrastCheck" />
 
     <TextView
+        android:id="@+id/logo_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="CLIMB HARDER"

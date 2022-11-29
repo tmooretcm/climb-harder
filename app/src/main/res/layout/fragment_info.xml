@@ -12,19 +12,42 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="INFO"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:textSize="25sp"/>
 
     <TextView
+        android:id="@+id/fragment_info_app_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CLIMB HARDER"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/fragment_info_page_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="25sp"/>
+
+    <TextView
+        android:id="@+id/fragment_info_app_body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Climb Harder is an app where you can log all of the sends you have made at the climbing gym."
+        android:layout_margin="5dp"
+        app:layout_constraintTop_toBottomOf="@id/fragment_info_app_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:textSize="20sp"/>
+
+    <TextView
         android:id="@+id/fragment_info_send_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="What is a send?"
-        android:layout_marginTop="25dp"
-        app:layout_constraintTop_toBottomOf="@id/fragment_info_page_title"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/fragment_info_app_body"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:textSize="25sp"/>
@@ -33,12 +56,13 @@
         android:id="@+id/fragment_info_send_body"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="A send is ..."
-        android:layout_marginTop="5dp"
+        android:text="A send is a climb you have completed. As problems are constantly being changed out at gyms, Climb Harder lets you keep track of your favorite climbs forever."
+        android:layout_margin="5dp"
         app:layout_constraintTop_toBottomOf="@id/fragment_info_send_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textSize="25sp"/>
+        android:gravity="center"
+        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/fragment_info_grade_title"
@@ -55,12 +79,14 @@
         android:id="@+id/fragment_info_grade_body"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="A grade is ... and you calculate by ..."
-        android:layout_marginTop="5dp"
+        android:text="Grades are how hard the climb is. Input your gym's grade for the climb, or use the V system, where climbs range from V0-V17."
+        android:layout_margin="5dp"
         app:layout_constraintTop_toBottomOf="@id/fragment_info_grade_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textSize="25sp"/>
+        android:gravity="center"
+        android:textSize="20sp"/>
+
 
 
     <Button
